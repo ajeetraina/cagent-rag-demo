@@ -1,6 +1,6 @@
 # cagent RAG Test
 
-Sample project to test RAG configurations from the blog post.
+Sample project to test RAG configurations for the blog post https://www.ajeetraina.com/how-to-rag-with-docker-cagent/
 
 ## Setup
 
