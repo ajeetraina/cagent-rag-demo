@@ -13,6 +13,8 @@ cd cagent-rag-test
 cagent --config cagent-config.yaml
 ```
 
+
+
 ## Test Queries
 
 Try these queries to verify RAG is working:
@@ -23,6 +25,13 @@ Try these queries to verify RAG is working:
 | "retry logic with backoff" | `Client.Do()` with exponential backoff | pkg/httpclient.go |
 | "HandleRequest" | `func HandleRequest(...)` | src/handlers.go |
 | "validate user token" | `validateToken()` | src/auth.go |
+
+
+<img width="615" height="479" alt="image" src="https://github.com/user-attachments/assets/26408a87-3189-4499-a93e-dc424c1ea1cf" />
+
+<img width="795" height="624" alt="image" src="https://github.com/user-attachments/assets/dbdedf30-7e59-4dfa-977e-12da4bec58ea" />
+
+
 
 ## What to Check
 
