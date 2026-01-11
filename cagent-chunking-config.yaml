@@ -1,0 +1,32 @@
+rag:
+  codebase:
+    docs: [./src, ./pkg]
+    strategies:
+      - type: chunked-embeddings
+        embedding_model: openai/text-embedding-3-small
+        vector_dimensions: 1536
+        database: ./embeddings.db
+        limit: 20
+        chunking:
+          size: 2000
+          code_aware: true
+      - type: bm25
+        database: ./bm25.db
+        limit: 15
+        chunking:
+          size: 2000
+          code_aware: true
+    results:
+      fusion:
+        strategy: rrf
+        k: 60
+      deduplicate: true
+      limit: 5
+
+agents:
+  root:
+    model: openai/gpt-4
+    instruction: |
+      You are a Go developer. Search the codebase before answering.
+      Reference specific files and functions.
+    rag: [codebase]
