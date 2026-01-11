@@ -42,7 +42,7 @@ Try these queries to verify RAG is working:
 ## Files
 
 ```
-cagent-rag-test/
+cagent-rag-demo/
 ├── cagent-config.yaml   # RAG config (hybrid: embeddings + bm25)
 ├── src/
 │   ├── auth.go          # Token validation, credentials check
