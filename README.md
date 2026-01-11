@@ -10,7 +10,7 @@ export OPENAI_API_KEY=your-key-here
 
 # Run cagent
 cd cagent-rag-test
-cagent --config cagent-config.yaml
+cagent run cagent-config.yaml
 ```
 
 
@@ -30,6 +30,14 @@ Try these queries to verify RAG is working:
 <img width="615" height="479" alt="image" src="https://github.com/user-attachments/assets/26408a87-3189-4499-a93e-dc424c1ea1cf" />
 
 <img width="795" height="624" alt="image" src="https://github.com/user-attachments/assets/dbdedf30-7e59-4dfa-977e-12da4bec58ea" />
+
+## ReRanking
+
+```
+cd cagent-reranking.yaml
+cagent run cagent-reranking-config.yaml
+```
+
 
 
 
