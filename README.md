@@ -34,14 +34,12 @@ Try these queries to verify RAG is working:
 ## ReRanking
 
 ```
-cd cagent-reranking.yaml
 cagent run cagent-reranking-config.yaml
 ```
 
 ## Chunking
 
 ```
-cd cagent-reranking.yaml
 cagent run cagent-chunking-config.yaml
 ```
 
