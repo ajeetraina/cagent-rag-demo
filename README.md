@@ -1,21 +1,43 @@
-# cagent and RAG
+# cagent RAG Test
 
+Sample project to test RAG configurations from the blog post.
 
-## Clone the repository
+## Setup
 
-```
-git clone https://github.com/ajeetraina/cagent-rag-demo/
-cd cagent-rag-demo/
-```
+```bash
+# Set your OpenAI API key
+export OPENAI_API_KEY=your-key-here
 
-
-## Running cagent with RAG
-
-```
-OPENAI_API_KEY=sk-proj-XXXD cagent run cagent-config.yaml
+# Run cagent
+cd cagent-rag-test
+cagent --config cagent-config.yaml
 ```
 
-### Prompt: how does authentication work?
+## Test Queries
 
+Try these queries to verify RAG is working:
 
-<img width="789" height="617" alt="image" src="https://github.com/user-attachments/assets/71d64c8c-3f4c-447d-9cef-31b94b9387e0" />
+| Query | Should Find | File |
+|-------|-------------|------|
+| "how does authentication work?" | `TokenValidator`, `CheckCredentials` | src/auth.go |
+| "retry logic with backoff" | `Client.Do()` with exponential backoff | pkg/httpclient.go |
+| "HandleRequest" | `func HandleRequest(...)` | src/handlers.go |
+| "validate user token" | `validateToken()` | src/auth.go |
+
+## What to Check
+
+1. **Semantic search works**: "authentication" finds code using "token", "credentials"
+2. **Keyword search works**: "HandleRequest" finds exact function name
+3. **Hybrid fusion works**: Results include both exact matches and related code
+
+## Files
+
+```
+cagent-rag-test/
+├── cagent-config.yaml   # RAG config (hybrid: embeddings + bm25)
+├── src/
+│   ├── auth.go          # Token validation, credentials check
+│   └── handlers.go      # HTTP handlers
+└── pkg/
+    └── httpclient.go    # HTTP client with retry/backoff
+```
