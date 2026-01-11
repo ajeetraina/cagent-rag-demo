@@ -18,11 +18,10 @@ rag:
         strategy: rrf
         k: 60
       deduplicate: true
-      limit: 10
+      limit: 5
       reranking:
         model: openai/gpt-4o-mini
         threshold: 0.3
-        limit: 5
         criteria: |
           Prioritize:
           - Code implementations over comments
