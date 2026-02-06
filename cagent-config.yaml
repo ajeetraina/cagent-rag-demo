@@ -22,7 +22,7 @@ rag:
 
 agents:
   root:
-    model: openai/gpt-4
+    model: openai/gpt-4o
     instruction: |
       You are a Go developer. Search the codebase before answering.
       Reference specific files and functions.
